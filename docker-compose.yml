@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  yaml-parser:
+    build: .
+    container_name: yaml_parser_api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      # Mount host test_data directory into /data/test_data in the container
+      - ./test_data:/data/test_data:ro
